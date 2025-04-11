@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-PHRAMA</title>
+  <link rel="stylesheet" href="./swiper-3.0.1/dist/css/swiper.min.css">
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.min.css">
+  <link rel="stylesheet" href="./css/stylehome.css">
+</head>
+
+<body>
+  <div class="nav">
+    <ul>
+      <li><span class="titre">e-PHARMA</span></li>
+      <li><a href="./pagehome.html">Acceuil</a></li>
+      <li><a href="./pagepharmacie.html">Pharmacie</a></li>
+    </ul>
+  </div>
+
+  <div class="slides">
+    <div class="testimonials">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slide">
+              <img src="./medicament/image-article/Doliprane-2.jpg">
+              <a class="voir btn" href="./medicament/doliprane.html">voir</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide">
+              <img src="./medicament/image-article/fervex-2.jpg">
+              <a class="voir btn" href="./medicament/fervex.html">voir</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide">
+              <img src="./medicament/image-article/maalox-2.jpg" alt="">
+              <a class="voir btn" href="./medicament/maalox.html">voir</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-dark" id="sticky-footer" style="margin-top: 0px;">
+    <div class="contenu">
+      <div class="row">
+        <div class="social"><a href="https://www.facebook.com/loxrd.damn"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+      <p class="apropos">Ce site ce base sur la domaine de la sante qui a pour but<br> guide les personnes dans le
+        domaine de la sante</p>
+      <p class="copyright">Jonathan Rajaofera ISPM © 2022</p>
+    </div>
+  </footer>
+  <script src="./swiper-3.0.1/dist/js/swiper.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      paginationClickable: '.swiper-pagination',
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      spaceBetween: 30
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,525 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-margin-top: 60px;
+}
+
+:root {
+  --noir: #555;
+  --bleu: #40c7e1;
+  --blanc: #f4f4f4f4;
+  --rouge: red;
+  --gris: gray;
+  --vert: lightgreen;
+}
+
+.texte {
+  text-align: justify;
+  word-break: break-all;
+  padding: 10px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section {
+  padding: 10px;
+  min-height: 100vh;
+}
+
+.swiper-containers {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-containers .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  width: 50%;
+  background: red;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* Tout les titres de chaque grand div */
+.section h1 {
+  text-align: center;
+  text-decoration: underline 8px var(--bleu);
+  margin-top: 50px;
+}
+
+/* boutton permettant de revenir en haut de la page */
+.retour {
+  display: block;
+  margin-left: 10px;
+  position: fixed;
+  right: 60px;
+  z-index: 400;
+  bottom: 15px;
+}
+
+.retour a {
+  width: 50px;
+  height: 50px;
+  background: var(--bleu);
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* classe permettant de masquer le botton qui mène en haut de la page */
+.masquer {
+  display: none !important;
+}
+
+/* commentaire dès que le souris survole le boutton */
+.retour .title {
+  position: absolute;
+  left: -200%;
+  display: none; /* afin qu'il ne soit pas visible de base*/
+  background: var(--noir);
+  color: var(--blanc);
+  padding: 10px;
+  border-radius: 5px;
+  /* transform: rotate(-90deg); */
+}
+
+.retour .title::before /* petit triangle pour styliser l'apparition du message */ {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--noir);
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  bottom: -5px;
+}
+
+.retour:hover .title {
+  display: block;
+}
+
+/* Image sur l'ecran d'acceuil */
+.acceuil .images {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.acceuil .images img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 325px;
+  height: 300px;
+}
+
+@media (max-width: 360px) {
+  .acceuil .images img {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.apercu {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 20px;
+}
+
+.apercu img {
+  width: 250px;
+  height: 250px;
+}
+
+.apercu .grand {
+  font-size: 25px;
+  color: var(--bleu);
+}
+/* Chaque champs de saisie */
+.contact form .item {
+  position: relative;
+}
+
+/* champ de saisie */
+.contact form {
+  display: grid;
+  gap: 30px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+/* section contact */
+.contact form .item input,
+.contact form .item textarea {
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid var(--noir);
+  outline: none;
+  resize: none;
+  width: 90%;
+}
+
+/* Indication sur les champs de saisie */
+.contact form .item label {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  pointer-events: none;
+  color: var(--gris);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* quand le curseur est sur un champ de saisie */
+.contact form .item input:focus ~ label,
+.contact form .item input:valid ~ label,
+.contact form .item textarea:focus ~ label,
+.contact form .item textarea:valid ~ label {
+  color: var(--bleu);
+  transform: translateY(-20px);
+  font-size: 12px;
+}
+
+/* Midifier le couleur de la ligne en bas du champs de saisie lorsque le curseur champs de saisie */
+.contact form .item input:focus,
+.contact form .item input:valid,
+.contact form .item textarea:focus,
+.contact form .item textarea:valid {
+  border-bottom: 1px solid var(--bleu);
+}
+
+/* consultation */
+.formulaire {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.formulaire table {
+  display: flex;
+  gap: 10px;
+}
+
+.texte {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Rendez vous */
+.rendez_vous {
+  display: flex;
+  flex-direction: column;
+}
+
+.rdv {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.rdv form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+section.rdv div.item {
+  position: relative;
+}
+
+section.rdv .item label.saisie {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+section.rdv .mail input {
+  width: 100%;
+}
+
+section.rdv .mail input:focus ~ label,
+section.rdv .mail input:valid ~ label {
+  transform: translateY(-30px);
+  color: var(--bleu);
+}
+
+section.rdv .mail input:focus,
+section.rdv .mail input:valid {
+  border-bottom: 1px solid var(--bleu);
+}
+
+section.rdv .item input {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--noir);
+}
+
+section.rdv form .erreur {
+  color: var(--rouge);
+}
+
+section.rdv form .succes {
+  color: var(--vert);
+}
+
+/* Footer du site */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form .btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer .site {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .liens {
+  margin-right: auto;
+}
+
+.deconnexion {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  gap: 2em;
+}
+
+.deconnexion a {
+  text-decoration: none;
+}
+
+/* a propos*/
+
+.carte {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.carte_contenu {
+  background: var(--blanc);
+  position: relative;
+  border-radius: 15px;
+  flex-direction: column;
+  max-width: 450px;
+  padding: 20px;
+  box-shadow: inset -2px -2px 2px #bbb, inset 2px 2px 2px #aaa;
+  cursor: pointer;
+}
+
+.carte_contenu:hover {
+  transition: 0.3s;
+  background: var(--bleu);
+  color: var(--blanc);
+  transition-delay: 0.3s;
+}
+
+.carte_contenu p {
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Avis */
+#contact h3 {
+  margin-top: 10px;
+  text-align: center;
+}
+/* affichage des commentaires des utilisateurs */
+
+.testimonials .swiper-container .swiper-wrapper {
+  height: 55vh;
+}
+
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: var(--blanc);
+  opacity: 1;
+  border: 1px solid var(--bleu);
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet:hover {
+  background: var(--bleu);
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--bleu);
+}
+
+.testimonials .swiper-slide {
+  background-color: var(--bleu);
+  height: 50vh;
+  color: var(--blanc);
+  border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+  .testimonials .testimonial-wrap {
+    padding-left: 0;
+  }
+
+  .testimonials .testimonials-carousel,
+  .testimonials .testimonials-slider {
+    overflow: hidden;
+  }
+}
+.swiper-container {
+  width: 75%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: var(--blanc);
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 320px) {
+  .consultation form table tr {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.nosDocteur {
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nosDocteur .docteur {
+  width: 350px;
+  height: 400px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nosDocteur .docteur .image {
+  z-index: 100;
+}
+
+.nosDocteur .docteur .image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.nosDocteur .docteur h4 {
+  z-index: 1000;
+  color: var(--blanc);
+}
+
+.nosDocteur .informationDocteur {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.nosDocteur .docteur:hover .image img {
+  filter: brightness(50%);
+}
+
+.nosDocteur .docteur:hover .informationDocteur {
+  display: block;
+}
+
+div.msg .probleme {
+  color: var(--rouge);
+}
+
+div.msg .succes {
+  color: var(--vert);
+}
+
+.nous {
+  color: var(--noir);
+  text-decoration: none;
+}

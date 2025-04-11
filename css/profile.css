@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profile {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+  gap: 50px;
+}
+
+.icone {
+  color: #fff;
+  background: #40c7e1;
+  padding: 40px;
+  border-radius: 50%;
+}
+
+.icone i {
+  transform: scale(3);
+}
+
+.espace {
+  margin: 0 0 10px 30px;
+  display: flex;
+}
+
+.gras {
+  font-weight: bold;
+}
+
+.profile .informationPerso {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#mdp {
+  background: red !important;
+}
+
+.profile .nom {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

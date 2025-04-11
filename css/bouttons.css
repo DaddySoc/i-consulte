@@ -1,0 +1,133 @@
+/* Les bouttons dans le site */
+@font-face {
+  font-family: "poppins";
+  src: url(../fonts/Poppins-Regular.otf);
+}
+
+* {
+  font-family: poppins;
+}
+
+.btn {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 20px;
+  min-width: 150px;
+  background: #40c7e1;
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  min-width: 200px;
+  text-align: center;
+  text-decoration: none;
+  gap: 10px;
+}
+
+/* effet de leger changement de couleur des bouttons ayant la classe "effetBtn" */
+.btn:hover {
+  background: #2cb3f2;
+  color: #fff;
+  cursor: pointer;
+}
+
+.supprimmer {
+  background: red;
+}
+
+.supprimmer:hover {
+  background: #ff2600;
+}
+
+.btnRetour {
+  position: fixed;
+  color: #fff;
+  left: 20px;
+  top: 20px;
+  padding: 20px;
+  background: #40c7e1;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.btnRetour:hover,
+.effetBtn:hover {
+  background: #2cb3f2;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn_reponse {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: #40c7e1;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 0;
+}
+
+/* boutton permettant de revenir en haut de la page */
+.retour {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 400;
+}
+
+.retour a {
+  width: 50px;
+  height: 50px;
+  background: #40c7e1;
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* commentaire dès que le souris survole le boutton */
+
+.retour::before {
+  content: attr(name);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-60px);
+  display: none; /* afin qu'il ne soit pas visible de base*/
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.retour:hover::before,
+.retour:hover::after {
+  display: block;
+}
+
+.retour::after /* petit triangle pour styliser l'apparition du message */ {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  width: 10px;
+  display: none; /* afin qu'il ne soit pas visible de base*/
+  height: 10px;
+  background: #333;
+}
+
+.retour:hover {
+  display: block;
+}
+
+/* classe permettant de masquer le botton qui mène en haut de la page */
+.masquer {
+  visibility: hidden;
+}

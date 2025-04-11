@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* formulaire de modification des informations de compte */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px #bbb, inset 1px 1px 1px whitesmoke;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 330px) {
+  form {
+    box-shadow: none;
+    width: 100%;
+  }
+}
+
+/* pour chaque champs */
+form .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  position: relative;
+}
+
+form .item input {
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #555;
+  outline: none;
+  width: 80%;
+}
+
+form .item input:focus ~ label,
+form .item input:valid ~ label {
+  color: #40c7e1;
+  transform: translateY(-25px);
+  font-size: 12px;
+}
+
+form .item input:focus,
+form .item input:valid {
+  border-bottom: 1px solid #40c7e1;
+}
+
+form .item label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  pointer-events: none;
+  color: gray;
+  transition: transform 0.3s ease-in-out;
+}
+
+form .btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #40c7e1;
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.erreur_message {
+  color: red;
+  font-size: 15px;
+}
+
+.item.mdp {
+  display: none;
+  margin-left: 10%;
+}

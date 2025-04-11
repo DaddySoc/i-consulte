@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px #bbb, inset 1px 1px 1px whitesmoke;
+}
+
+form .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.item .pass {
+  width: 80%;
+  position: relative;
+}
+
+.item .pass input {
+  width: 100%;
+}
+
+.item .pass span i.fa-eye {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
+
+form .item input {
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #555;
+  outline: none;
+  width: 80%;
+}
+
+form .item input:focus ~ label,
+form .item input:valid ~ label {
+  color: #40c7e1;
+  transform: translateY(-25px);
+  font-size: 12px;
+}
+
+form .item input:focus,
+form .item input:valid {
+  border-bottom: 1px solid #40c7e1;
+}
+
+form .item label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 11%;
+  pointer-events: none;
+  color: gray;
+  transition: transform 0.3s ease-in-out;
+}
+
+form .item .pass label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+  pointer-events: none;
+  color: gray;
+  transition: transform 0.3s ease-in-out;
+}
+
+form .btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #40c7e1;
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+form .btn:last-child {
+  background: red;
+  background: none;
+  color: #40c7e1;
+  text-decoration: none;
+}
+
+h1 {
+  color: #40c7e1;
+}
+
+.erreur_message {
+  color: red;
+  font-size: 15px;
+}
+
+a.btn_annuler {
+  text-decoration: none;
+  padding: 10px;
+  color: #40c7e1;
+  font-size: 15px;
+}
+
+.succes_message {
+  color: lightgreen;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  form {
+    width: 80%;
+    display: grid;
+    gap: 2.5em;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  form h1 {
+    color: #40c7e1;
+    text-align: center;
+  }
+
+  form .erreur_message {
+    color: red;
+    font-size: 15px;
+  }
+
+  form .succes_message {
+    color: lightgreen;
+    font-size: 15px;
+  }
+
+  form .item input {
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #555;
+    outline: none;
+    width: 100%;
+  }
+  form .item label {
+    left: 5px;
+  }
+
+  .item .pass {
+    width: 100%;
+    position: relative;
+  }
+
+  form .btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #40c7e1;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+  }
+}
